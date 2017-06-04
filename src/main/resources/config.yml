@@ -1,0 +1,29 @@
+# DO NOT TOUCH #
+Version: 0.1
+################
+
+############################################################
+# +------------------------------------------------------+ #
+# |                    PLUGIN CONTROL                    | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Customizable plugin prefix.
+PluginPrefix: "&f[&6PvPTitles&f] "
+
+# Enable/Disable metrics.
+Metrics: true
+
+# Notice Update Available.
+Alert: true
+# Automatic updates.
+Update: false
+
+# Display integrations
+DisplayIntegrations: true
+
+# Error structure:
+# 0 - Simplified.
+# 1 - Essential data.
+# 2 - All data.
+ErrorFormat: 2

@@ -102,32 +102,28 @@
             </resource>            
         </resources>
         
-        <plugins> 
-            <!-- BStats -->
+        <plugins>
+            <!-- ACLIB -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <artifactSet>
-                        <includes>
-                            <include>org.bstats:*</include>
-                        </includes>
-                    </artifactSet>
-                    <relocations>
-                        <relocation>
-                            <pattern>org.bstats</pattern>
-                            <shadedPattern>com.alternacraft.pvptitles.Libraries</shadedPattern>
-                        </relocation>
-                    </relocations>
-                </configuration>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
+                        <id>libs</id>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                    </execution>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>com.alternacraft.aclib</pattern>
+                                    <shadedPattern>${project.groupId}.${project.artifactId}.ACLIB</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>      
                 </executions>
             </plugin>
                        
@@ -135,7 +131,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.10</version>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <id>copy</id>
@@ -171,7 +167,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.7.201606060606</version>
+                <version>0.7.9</version>
                 <executions>
                     <execution>
                         <goals>
@@ -217,7 +213,7 @@
         </license>
     </licenses>    
 
-    <!-- Environment Settings   
+    <!-- Environment Settings -->
     <distributionManagement>
         <repository>
             <id>bintray</id>
@@ -230,5 +226,5 @@
             <name>SNAPSHOTS</name>
             <url>http://oss.jfrog.org/oss-snapshot-local/</url>
         </snapshotRepository>
-    </distributionManagement>  -->   
+    </distributionManagement>
 </project>

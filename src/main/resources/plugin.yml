@@ -1,0 +1,24 @@
+name: PvpHonor
+version: 0.0.1
+description: Custom coin for an enhanced experience in PvP.
+
+author: AlternaCraft
+
+main: com.alternacraft.pvphonor.Main.PvpHonor
+softdepend: [Vault]
+
+commands:
+    pvphonor:
+        description: It shows info about the plugin.
+        usage: /<command>
+        aliases: pvphonor
+        permission: pvphonor.help
+
+permissions:
+    pvphonor.*:
+        description: Access to all commands.
+        children:
+        - pvphonor.help: true
+    pvphonor.help:
+        description: Access to /pvphonor command.
+        default: true
