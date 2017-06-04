@@ -8,21 +8,26 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>   
      
-    <repositories>        
+    <repositories>  
+        <!-- Spigot repository -->      
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-        
+        <!-- Vault repository -->
         <repository>
             <id>vault-repo</id>
             <url>http://nexus.hc.to/content/repositories/pub_releases</url>
-        </repository>
-        
-        <repository>
-            <id>bstats-repo</id>
-            <url>http://repo.bstats.org/content/repositories/releases/</url>
         </repository>        
+        <!-- ACLIB repository -->
+        <repository>
+            <id>aclib-releases</id>
+            <url>http://dl.bintray.com/alternacraft/maven/</url>
+        </repository>
+        <repository>
+            <id>aclib-snapshots</id>
+            <url>http://oss.jfrog.org/oss-snapshot-local/</url>
+        </repository>      
     </repositories> 
     
     <dependencies>
@@ -44,12 +49,13 @@
             <type>jar</type>
         </dependency>
         
-        <!-- BStats -->
+        <!-- AlternaCraft LIB dependency -->
         <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>1.1</version>
-        </dependency>
+            <groupId>com.alternacraft</groupId>
+            <artifactId>aclib</artifactId>    
+            <version>1.2.2-SNAPSHOT</version>      
+            <scope>compile</scope>
+        </dependency>   
         
         <!-- TESTING DEPENDENCIES -->
         <dependency>
@@ -107,7 +113,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>2.4.3</version>
                 <executions>
                     <execution>
                         <id>libs</id>
@@ -131,7 +137,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>2.10</version>
                 <executions>
                     <execution>
                         <id>copy</id>
@@ -167,7 +173,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.9</version>
+                <version>0.7.7.201606060606</version>
                 <executions>
                     <execution>
                         <goals>
@@ -218,7 +224,7 @@
         <repository>
             <id>bintray</id>
             <name>RELEASES</name>
-            <url>https://api.bintray.com/maven/alternacraft/maven/PvpTitles/;publish=1;</url>            
+            <url>https://api.bintray.com/maven/alternacraft/maven/PvpHonor/;publish=1;</url>            
         </repository>
         
         <snapshotRepository>

@@ -16,41 +16,28 @@
  */
 package com.alternacraft.pvphonor.Main;
 
+
+import com.alternacraft.aclib.PluginBase;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  *
  * @author AlternaCraft
  */
-public class PvpHonor extends JavaPlugin {
+public class Manager {
 
-    @Override
-    public void onEnable() {
-        // Set up before start
-        Manager.BASE.definePluginPrefix("&1[&bPvpHonor&1]");
+    public static Manager INSTANCE = new Manager();
 
-        // Plugin manager init
-        if (!Manager.INSTANCE.setup(this)) {
-            this.setEnabled(false);
-            return;
-        }
+    public static final PluginBase BASE = PluginBase.INSTANCE;
 
-        // Later tasks
-        this.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
-            @Override
-            public void run() {
-                //
-            }
-        });
+    private final ConfigLoader loader;
 
-        // Sends enabled message
-        this.getLogger().info("PvpHonor has been enabled!");
+    private Manager() {
+        loader = new ConfigLoader();
     }
 
-    @Override
-    public void onDisable() {
-        
-        // Sends disable message
-        this.getLogger().info("PvpHonor has been disabled!");
+    public boolean setup(JavaPlugin plugin) {
+        BASE.init(plugin, loader);
+        return true;
     }
 }

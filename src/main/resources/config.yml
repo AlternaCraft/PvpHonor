@@ -1,5 +1,5 @@
 # DO NOT TOUCH #
-Version: 0.1
+version: 0.0.1
 ################
 
 ############################################################
@@ -9,21 +9,39 @@ Version: 0.1
 ############################################################
 
 # Customizable plugin prefix.
-PluginPrefix: "&f[&6PvPTitles&f] "
+pluginPrefix: "&f[&6PvPTitles&f] "
 
 # Enable/Disable metrics.
-Metrics: true
+metrics: true
 
 # Notice Update Available.
-Alert: true
+alert: true
 # Automatic updates.
-Update: false
+update: false
 
 # Display integrations
-DisplayIntegrations: true
+displayIntegrations: true
 
 # Error structure:
 # 0 - Simplified.
 # 1 - Essential data.
 # 2 - All data.
-ErrorFormat: 2
+errorFormat: 2
+
+############################################################
+# +------------------------------------------------------+ #
+# |                        LANGUAGE                      | #
+# +------------------------------------------------------+ #
+############################################################
+
+# Default translations (Spanish (ES) | English (EN))
+# ############################# // Custom translations available \\ ##############################
+# German (DE) | Greek (GR) | French (FR) | Japanese (JP) | Chinese (CH) | Simplified Chinese (CN)
+# Russian (RU) | Portuguese (PT) | Swedish (SV) | Czech (CS) | Euskara (EU) | Galician (GL)
+# Catalan (CA) | Croatian (HR) | Korean (KO) | Ukrainian (UK) | Polish (PL) | Slovenian (SL)
+# Serbian (SR) | Romanian (RO)
+# ################################################################################################
+defaultLang: EN
+## For system messages and for players whose launcher has another language ##
+## [Custom translations] Also, you can add your own translations...
+## Example: You can create "messages_DE" and the messages into the file will be shown to the players whose launcher language is German.
